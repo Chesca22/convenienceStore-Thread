@@ -30,8 +30,6 @@ import java.util.*;
     public StoreServices(QueueClass queue){
         this.queue = queue;
     }
-  //  Users cashier = new Users();
-
 
     public boolean sell(Users cashier, Users customer) {
         double totalPrice = 0;
@@ -52,7 +50,6 @@ import java.util.*;
                         result = false;
                     }
                 }
-
         }
         else {
             System.out.println("NOT AUTHORIZED USER");
