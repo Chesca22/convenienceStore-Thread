@@ -27,9 +27,10 @@ import java.util.*;
         this.customer = customer;
     }
 
-    public StoreServices(QueueClass queue){
-        this.queue = queue;
-    }
+//   // public StoreServices(QueueClass queue){
+//        this.queue = queue;
+//    }
+
 
     public boolean sell(Users cashier, Users customer) {
         double totalPrice = 0;

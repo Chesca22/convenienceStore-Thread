@@ -124,10 +124,6 @@ public class Main {
                System.out.println("interrupt");
               }
              }
-         System.out.println("*".repeat(100));
-
-         StoreServices storeServices = new StoreServices(cashier, customer1);
-         Thread thread0= new Thread(storeServices);
 
         }
 
