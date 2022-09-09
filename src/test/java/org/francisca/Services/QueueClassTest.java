@@ -20,7 +20,6 @@ class QueueClassTest {
     Users Thelma = new Users("Thelma", 003, 1500, Roles.CUSTOMER);
     Users Dorcas = new Users("Dorcas", 004, 2000, Roles.CUSTOMER);
 
-
     @Test
 
     void addCustomersToQueue() {
@@ -45,10 +44,10 @@ class QueueClassTest {
     @Test
 
     void addProductToQueueWhenProductInStore() {
-        store.addProductToCart(Inventory.allProduct, Franca, "carrot", 4);
-        store.addProductToCart(Inventory.allProduct, Thelma, "carrot", 5);
-        store.addProductToCart(Inventory.allProduct, Eunice, "carrot", 3);
-        store.addProductToCart(Inventory.allProduct, Dorcas, "whole wheat", 4);
+        store.addProductToCart(Franca, "carrot", 4);
+        store.addProductToCart(Thelma, "carrot", 5);
+        store.addProductToCart(Eunice, "carrot", 3);
+        store.addProductToCart(Dorcas, "whole wheat", 4);
 
         assertEquals("item added",queueClass.addProductToQueue(Thelma));
         assertEquals("item added",queueClass.addProductToQueue(Eunice));
@@ -58,34 +57,20 @@ class QueueClassTest {
 
     @Test
     void printingWithPriorityQueue() {
+        store.addProductToCart(Franca, "carrot", 4);
+        store.addProductToCart(Thelma, "carrot", 5);
+        store.addProductToCart(Eunice, "carrot", 3);
+        store.addProductToCart(Dorcas, "whole wheat", 4);
 
         queueClass.addCustomerToQueueList(Franca);
         queueClass.addCustomerToQueueList(Eunice);
         queueClass.addCustomerToQueueList(Thelma);
         queueClass.addCustomerToQueueList(Dorcas);
 
-        assertEquals("Franc has successfully purchased item and receipt issued\n"
-                        + "Eunice has successfully purchased item and receipt issued\n"
-                        + "Thelma has successfully purchased item and receipt issued\n"
-                        + "Dorcas has successfully purchased item and receipt issued\n",
-
-                queueClass.printQueue());
+        assertEquals("done", queueClass.printingWithPriorityQueue());
     }
 
 
-    @Test
-    void printQueueWhenQueueIsEmpty() {
-        assertThrows(NoSuchElementException.class, () -> queueClass.printQueue());
-    }
 
-    @Test
-    @DisplayName("Should not add the product to the queue when the product is not in the store")
-    void addProductToQueueWhenProductIsNotInStore() {
-
-        assertEquals("item added", queueClass.addProductToQueue(Franca));
-        assertEquals("item added", queueClass.addProductToQueue(Thelma));
-        assertEquals("item added", queueClass.addProductToQueue(Dorcas));
-
-    }
 
 }

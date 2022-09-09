@@ -42,29 +42,27 @@ public class QueueClass {
 
     public String addProductToQueue(Users customer){
         String output="";
-        for(Map.Entry<String, Product> entry: customer.getCart().entrySet()){
-            if(entry.getKey().equalsIgnoreCase("carrot")){
+        for(Map.Entry<String, Product> entry: customer.getCart().entrySet()) {
+            if (entry.getKey().equalsIgnoreCase("carrot")) {
                 carrotQueue.add(new customerDTO(customer.getName(), entry.getValue().getItemName(), entry.getValue().getQuantity()));
                 System.out.println(customer.getName() + "  " + entry.getValue().getItemName() + " added to queue");
                 output = "item added";
             }
-            if(entry.getKey().equalsIgnoreCase("whole wheat")){
+            if (entry.getKey().equalsIgnoreCase("whole wheat")) {
                 wholeWheatQueue.add(new customerDTO(customer.getName(), entry.getValue().getItemName(), entry.getValue().getQuantity()));
-                System.out.println(customer.getName() + "  " +  entry.getValue().getItemName() + " added to queue");
+                System.out.println(customer.getName() + "  " + entry.getValue().getItemName() + " added to queue");
                 output = "item added";
             }
-            if(entry.getKey().equalsIgnoreCase("banana")){
+            if (entry.getKey().equalsIgnoreCase("banana")) {
                 bananaQueue.add(new customerDTO(customer.getName(), entry.getValue().getItemName(), entry.getValue().getQuantity()));
-                System.out.println(customer.getName() + "  " +  entry.getValue().getItemName() + " added to queue");
+                System.out.println(customer.getName() + "  " + entry.getValue().getItemName() + " added to queue");
                 output = "item added";
             }
-            if(entry.getKey().equalsIgnoreCase("potato chips")){
+            if (entry.getKey().equalsIgnoreCase("potato chips")) {
                 potatoChipQueue.add(new customerDTO());
-                System.out.println(customer.getName() + "  " +  entry.getValue().getItemName() + " added to queue");
+                System.out.println(customer.getName() + "  " + entry.getValue().getItemName() + " added to queue");
                 output = "item added";
             }
-            else output = "item does not exist";
-
         }
         return output;
     }

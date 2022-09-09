@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Inventory {
 
-    public static List<Product> allProduct = new ArrayList<>();
+    public List<Product> allProduct = new ArrayList<>();
 
 
     public List<Product> readingProducts() {
@@ -44,7 +44,7 @@ public class Inventory {
         return allProduct;
     }
 
-    private static int getMatchIndex(String item) {
+    private int getMatchIndex(String item) {
         for (Product ele : allProduct) {
             if (ele.getItemName().equalsIgnoreCase(item)) {
                 return allProduct.indexOf(ele);

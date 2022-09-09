@@ -29,11 +29,6 @@ public class Users {
         this.name = name;
         this.roles = roles;
     }
-    public Users(String name, int id, Roles roles){
-        this.name= name;
-        this.id = id;
-        this.roles = roles;
-    }
 
     public Users(String name, int id, double wallet, Roles roles){
         this.name= name;
